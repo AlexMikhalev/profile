@@ -26,7 +26,6 @@ winapi = { version = "0.3.9", features = ["processthreadsapi", "psapi"] }
 
 [features]
 cpu_profiler = []
-jemalloc = ["jemalloc-ctl"]
-jemallocator = ["dep:jemallocator"]
+jemalloc = ["dep:jemallocator","jemalloc-ctl"]
 # Uncomment to enable for the whole crate graph
-default = [ "jemalloc" ,"jemallocator"]
+default = [ "jemalloc"]
