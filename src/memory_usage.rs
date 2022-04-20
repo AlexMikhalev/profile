@@ -87,7 +87,7 @@ fn memusage_linux() -> MemoryUsage {
     }
 }
 
-#[derive(Default, PartialEq, Eq, PartialOrd, Ord, Hash, Clone, Copy)]
+#[derive(Debug, Default, PartialEq, Eq, PartialOrd, Ord, Hash, Clone, Copy)]
 pub struct Bytes(isize);
 
 impl Bytes {
