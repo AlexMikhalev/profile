@@ -23,9 +23,11 @@ perf-event = "0.4.7"
 [target.'cfg(windows)'.dependencies]
 winapi = { version = "0.3.9", features = ["processthreadsapi", "psapi"] }
 
+[target.'cfg(not(target_env = "msvc"))'.dependencies]
+jemallocator = { version = "0.4.3", package = "tikv-jemallocator", optional = true }
+
 [features]
 cpu_profiler = []
 jemalloc = ["jemalloc-ctl"]
-
 # Uncomment to enable for the whole crate graph
-# default = [ "cpu_profiler" ]
+default = [ "jemalloc" ,"jemallocator"]
